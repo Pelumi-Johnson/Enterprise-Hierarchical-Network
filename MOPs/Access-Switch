@@ -8,249 +8,456 @@
 ! ACC-SW1 — SALES
 ! =========================
 
+enable
+configure terminal
 hostname ACC-SW1
+lldp run
+enable password class
+
+line console 0
+ password cisco
+ login
+exit
+
+line vty 0 4
+ password cisco
+ login
+exit
+
+service password-encryption
 spanning-tree mode rapid-pvst
 
 vlan 10
  name Sales
+exit
 vlan 20
  name IT
+exit
 vlan 30
  name Admin
-vlan 90
- name Servers
+exit
 vlan 99
  name Management
+exit
+vlan 90
+ name Servers
+exit
 
 interface range fa0/1-2
  switchport mode access
  switchport access vlan 10
  spanning-tree portfast
+exit
 
 interface range fa0/6-7
  switchport mode trunk
  switchport trunk allowed vlan 10,20,30,90,99
+exit
 
 
 ! =========================
 ! ACC-SW2 — SALES
 ! =========================
 
+enable
+configure terminal
 hostname ACC-SW2
+lldp run
+enable password class
+
+line console 0
+ password cisco
+ login
+exit
+
+line vty 0 4
+ password cisco
+ login
+exit
+
+service password-encryption
 spanning-tree mode rapid-pvst
 
 vlan 10
  name Sales
+exit
 vlan 20
  name IT
+exit
 vlan 30
  name Admin
-vlan 90
- name Servers
+exit
 vlan 99
  name Management
+exit
+vlan 90
+ name Servers
+exit
 
 interface range fa0/1-2
  switchport mode access
  switchport access vlan 10
  spanning-tree portfast
+exit
 
 interface range fa0/6-7
  switchport mode trunk
  switchport trunk allowed vlan 10,20,30,90,99
+exit
 
 
 ! =========================
 ! ACC-SW3 — IT
 ! =========================
 
+enable
+configure terminal
 hostname ACC-SW3
+lldp run
+enable password class
+
+line console 0
+ password cisco
+ login
+exit
+
+line vty 0 4
+ password cisco
+ login
+exit
+
+service password-encryption
 spanning-tree mode rapid-pvst
 
 vlan 10
  name Sales
+exit
 vlan 20
  name IT
+exit
 vlan 30
  name Admin
-vlan 90
- name Servers
+exit
 vlan 99
  name Management
+exit
+vlan 90
+ name Servers
+exit
 
 interface range fa0/1-2
  switchport mode access
  switchport access vlan 20
  spanning-tree portfast
+exit
 
 interface range fa0/6-7
  switchport mode trunk
  switchport trunk allowed vlan 10,20,30,90,99
+exit
 
 
 ! =========================
 ! ACC-SW4 — IT / PRINTER
 ! =========================
 
+enable
+configure terminal
 hostname ACC-SW4
+lldp run
+enable password class
+
+line console 0
+ password cisco
+ login
+exit
+
+line vty 0 4
+ password cisco
+ login
+exit
+
+service password-encryption
 spanning-tree mode rapid-pvst
 
 vlan 10
  name Sales
+exit
 vlan 20
  name IT
+exit
 vlan 30
  name Admin
-vlan 90
- name Servers
+exit
 vlan 99
  name Management
+exit
+vlan 90
+ name Servers
+exit
 
 interface range fa0/1-2
  switchport mode access
  switchport access vlan 20
  spanning-tree portfast
+exit
 
 interface range fa0/6-7
  switchport mode trunk
  switchport trunk allowed vlan 10,20,30,90,99
+exit
 
 
 ! =========================
-! ACC-SW5 — ADMIN / AP
+! ACC-SW5 — ADMIN / ACCESS POINT
 ! =========================
 
+enable
+configure terminal
 hostname ACC-SW5
+lldp run
+enable password class
+
+line console 0
+ password cisco
+ login
+exit
+
+line vty 0 4
+ password cisco
+ login
+exit
+
+service password-encryption
 spanning-tree mode rapid-pvst
 
 vlan 10
  name Sales
+exit
 vlan 20
  name IT
+exit
 vlan 30
  name Admin
-vlan 90
- name Servers
+exit
 vlan 99
  name Management
+exit
+vlan 90
+ name Servers
+exit
 
 interface fa0/1
  switchport mode access
  switchport access vlan 30
  spanning-tree portfast
+exit
 
 interface range fa0/6-7
  switchport mode trunk
  switchport trunk allowed vlan 10,20,30,90,99
+exit
 
 
 ! =========================
 ! ACC-SW6 — ADMIN
 ! =========================
 
+enable
+configure terminal
 hostname ACC-SW6
+lldp run
+enable password class
+
+line console 0
+ password cisco
+ login
+exit
+
+line vty 0 4
+ password cisco
+ login
+exit
+
+service password-encryption
 spanning-tree mode rapid-pvst
 
 vlan 10
  name Sales
+exit
 vlan 20
  name IT
+exit
 vlan 30
  name Admin
-vlan 90
- name Servers
+exit
 vlan 99
  name Management
+exit
+vlan 90
+ name Servers
+exit
 
 interface range fa0/1-3
  switchport mode access
  switchport access vlan 30
  spanning-tree portfast
+exit
 
 interface range fa0/6-7
  switchport mode trunk
  switchport trunk allowed vlan 10,20,30,90,99
+exit
 
 
 ! =========================
 ! ACC-SW7 — MANAGEMENT
 ! =========================
 
+enable
+configure terminal
 hostname ACC-SW7
+lldp run
+enable password class
+
+line console 0
+ password cisco
+ login
+exit
+
+line vty 0 4
+ password cisco
+ login
+exit
+
+service password-encryption
 spanning-tree mode rapid-pvst
 
 vlan 10
  name Sales
+exit
 vlan 20
  name IT
+exit
 vlan 30
  name Admin
-vlan 90
- name Servers
+exit
 vlan 99
  name Management
+exit
+vlan 90
+ name Servers
+exit
 
 interface range fa0/1-2
  switchport mode access
  switchport access vlan 99
  spanning-tree portfast
+exit
 
 interface range fa0/6-7
  switchport mode trunk
  switchport trunk allowed vlan 10,20,30,90,99
+exit
 
 
 ! =========================
 ! ACC-SW8 — MANAGEMENT
 ! =========================
 
+enable
+configure terminal
 hostname ACC-SW8
+lldp run
+enable password class
+
+line console 0
+ password cisco
+ login
+exit
+
+line vty 0 4
+ password cisco
+ login
+exit
+
+service password-encryption
 spanning-tree mode rapid-pvst
 
 vlan 10
  name Sales
+exit
 vlan 20
  name IT
+exit
 vlan 30
  name Admin
-vlan 90
- name Servers
+exit
 vlan 99
  name Management
+exit
+vlan 90
+ name Servers
+exit
 
 interface range fa0/1-2
  switchport mode access
  switchport access vlan 99
  spanning-tree portfast
+exit
 
 interface range fa0/6-7
  switchport mode trunk
  switchport trunk allowed vlan 10,20,30,90,99
+exit
 
 
 ! =========================
 ! ACC-SW9 — MANAGEMENT
 ! =========================
 
+enable
+configure terminal
 hostname ACC-SW9
+lldp run
+enable password class
+
+line console 0
+ password cisco
+ login
+exit
+
+line vty 0 4
+ password cisco
+ login
+exit
+
+service password-encryption
 spanning-tree mode rapid-pvst
 
 vlan 10
  name Sales
+exit
 vlan 20
  name IT
+exit
 vlan 30
  name Admin
-vlan 90
- name Servers
+exit
 vlan 99
  name Management
+exit
+vlan 90
+ name Servers
+exit
 
 interface range fa0/1-2
  switchport mode access
  switchport access vlan 99
  spanning-tree portfast
+exit
 
 interface range fa0/6-7
  switchport mode trunk
  switchport trunk allowed vlan 10,20,30,90,99
+exit
