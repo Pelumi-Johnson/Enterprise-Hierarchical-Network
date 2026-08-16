@@ -1,1 +1,166 @@
+! =========================================================
+! DISTRIBUTION SWITCH CONFIGURATIONS
+! Enterprise Hierarchical Network
+! =========================================================
 
+
+! =========================
+! DIST-SW1
+! =========================
+
+hostname DIST-SW1
+spanning-tree mode rapid-pvst
+
+vlan 10
+ name Sales
+vlan 20
+ name IT
+vlan 30
+ name Admin
+vlan 90
+ name Servers
+vlan 99
+ name Management
+
+interface range fa0/6-10
+ switchport mode trunk
+ switchport trunk allowed vlan 10,20,30,90,99
+
+interface range gi0/1-2
+ switchport mode trunk
+ switchport trunk allowed vlan 10,20,30,90,99
+
+
+! =========================
+! DIST-SW2
+! =========================
+
+hostname DIST-SW2
+spanning-tree mode rapid-pvst
+
+vlan 10
+ name Sales
+vlan 20
+ name IT
+vlan 30
+ name Admin
+vlan 90
+ name Servers
+vlan 99
+ name Management
+
+interface range fa0/6-10
+ switchport mode trunk
+ switchport trunk allowed vlan 10,20,30,90,99
+
+interface range gi0/1-2
+ switchport mode trunk
+ switchport trunk allowed vlan 10,20,30,90,99
+
+
+! =========================
+! DIST-SW3
+! =========================
+
+hostname DIST-SW3
+spanning-tree mode rapid-pvst
+
+vlan 10
+ name Sales
+vlan 20
+ name IT
+vlan 30
+ name Admin
+vlan 90
+ name Servers
+vlan 99
+ name Management
+
+interface range fa0/6-10
+ switchport mode trunk
+ switchport trunk allowed vlan 10,20,30,90,99
+
+interface range gi0/1-2
+ switchport mode trunk
+ switchport trunk allowed vlan 10,20,30,90,99
+
+
+! =========================
+! DIST-SW4
+! =========================
+
+hostname DIST-SW4
+spanning-tree mode rapid-pvst
+
+vlan 10
+ name Sales
+vlan 20
+ name IT
+vlan 30
+ name Admin
+vlan 90
+ name Servers
+vlan 99
+ name Management
+
+interface range fa0/6-10
+ switchport mode trunk
+ switchport trunk allowed vlan 10,20,30,90,99
+
+interface range gi0/1-2
+ switchport mode trunk
+ switchport trunk allowed vlan 10,20,30,90,99
+
+
+! =========================
+! DIST-SW5
+! =========================
+
+hostname DIST-SW5
+spanning-tree mode rapid-pvst
+
+vlan 10
+ name Sales
+vlan 20
+ name IT
+vlan 30
+ name Admin
+vlan 90
+ name Servers
+vlan 99
+ name Management
+
+interface range fa0/6-10
+ switchport mode trunk
+ switchport trunk allowed vlan 10,20,30,90,99
+
+interface range gi0/1-2
+ switchport mode trunk
+ switchport trunk allowed vlan 10,20,30,90,99
+
+
+! =========================
+! DIST-SW6
+! =========================
+
+hostname DIST-SW6
+spanning-tree mode rapid-pvst
+
+vlan 10
+ name Sales
+vlan 20
+ name IT
+vlan 30
+ name Admin
+vlan 90
+ name Servers
+vlan 99
+ name Management
+
+interface range fa0/6-10
+ switchport mode trunk
+ switchport trunk allowed vlan 10,20,30,90,99
+
+interface range gi0/1-2
+ switchport mode trunk
+ switchport trunk allowed vlan 10,20,30,90,99
