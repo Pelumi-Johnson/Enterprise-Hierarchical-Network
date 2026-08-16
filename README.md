@@ -48,7 +48,7 @@ Successful end-to-end ICMP connectivity was verified from internal client networ
 
 `100.100.100.100`
 
-![External Connectivity Verification](diagrams/pat.png)
+![External Connectivity Verification](diagrams/pat.jpg)
 
 ---
 
