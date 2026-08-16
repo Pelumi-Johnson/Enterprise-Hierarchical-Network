@@ -1,1 +1,51 @@
+! =========================================================
+! INTERNET ROUTER CONFIGURATION
+! Enterprise Hierarchical Network
+! =========================================================
 
+enable
+configure terminal
+hostname INTERNET-R1
+
+lldp run
+enable password class
+
+line console 0
+ password cisco
+ login
+exit
+
+line vty 0 4
+ password cisco
+ login
+exit
+
+service password-encryption
+
+
+! =========================
+! INTERFACE TO CORE-R1
+! =========================
+
+interface gigabitethernet0/0/0
+ ip address 203.0.113.2 255.255.255.252
+ no shutdown
+exit
+
+
+! =========================
+! DEFAULT ROUTE TO CORE-R1
+! =========================
+
+ip route 0.0.0.0 0.0.0.0 203.0.113.1
+
+
+! =========================
+! SIMULATED INTERNET
+! =========================
+
+interface loopback 0
+ description Internet
+ no shutdown
+ ip address 100.100.100.100 255.255.255.255
+exit
