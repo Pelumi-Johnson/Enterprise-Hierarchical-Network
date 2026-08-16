@@ -8,159 +8,309 @@
 ! DIST-SW1
 ! =========================
 
+enable
+configure terminal
 hostname DIST-SW1
+lldp run
+enable password class
+
+line console 0
+ password cisco
+ login
+exit
+
+line vty 0 4
+ password cisco
+ login
+exit
+
+service password-encryption
 spanning-tree mode rapid-pvst
 
 vlan 10
  name Sales
+exit
 vlan 20
  name IT
+exit
 vlan 30
  name Admin
-vlan 90
- name Servers
+exit
 vlan 99
  name Management
+exit
+vlan 90
+ name Servers
+exit
 
 interface range fa0/6-10
+ switchport trunk encapsulation dot1q
  switchport mode trunk
  switchport trunk allowed vlan 10,20,30,90,99
+exit
 
 interface range gi0/1-2
+ switchport trunk encapsulation dot1q
  switchport mode trunk
  switchport trunk allowed vlan 10,20,30,90,99
+exit
 
 
 ! =========================
 ! DIST-SW2
 ! =========================
 
+enable
+configure terminal
 hostname DIST-SW2
+lldp run
+enable password class
+
+line console 0
+ password cisco
+ login
+exit
+
+line vty 0 4
+ password cisco
+ login
+exit
+
+service password-encryption
 spanning-tree mode rapid-pvst
 
 vlan 10
  name Sales
+exit
 vlan 20
  name IT
+exit
 vlan 30
  name Admin
-vlan 90
- name Servers
+exit
 vlan 99
  name Management
+exit
+vlan 90
+ name Servers
+exit
 
 interface range fa0/6-10
+ switchport trunk encapsulation dot1q
  switchport mode trunk
  switchport trunk allowed vlan 10,20,30,90,99
+exit
 
 interface range gi0/1-2
+ switchport trunk encapsulation dot1q
  switchport mode trunk
  switchport trunk allowed vlan 10,20,30,90,99
+exit
 
 
 ! =========================
 ! DIST-SW3
 ! =========================
 
+enable
+configure terminal
 hostname DIST-SW3
+lldp run
+enable password class
+
+line console 0
+ password cisco
+ login
+exit
+
+line vty 0 4
+ password cisco
+ login
+exit
+
+service password-encryption
 spanning-tree mode rapid-pvst
 
 vlan 10
  name Sales
+exit
 vlan 20
  name IT
+exit
 vlan 30
  name Admin
-vlan 90
- name Servers
+exit
 vlan 99
  name Management
+exit
+vlan 90
+ name Servers
+exit
 
 interface range fa0/6-10
+ switchport trunk encapsulation dot1q
  switchport mode trunk
  switchport trunk allowed vlan 10,20,30,90,99
+exit
 
 interface range gi0/1-2
+ switchport trunk encapsulation dot1q
  switchport mode trunk
  switchport trunk allowed vlan 10,20,30,90,99
+exit
 
 
 ! =========================
 ! DIST-SW4
 ! =========================
 
+enable
+configure terminal
 hostname DIST-SW4
+lldp run
+enable password class
+
+line console 0
+ password cisco
+ login
+exit
+
+line vty 0 4
+ password cisco
+ login
+exit
+
+service password-encryption
 spanning-tree mode rapid-pvst
 
 vlan 10
  name Sales
+exit
 vlan 20
  name IT
+exit
 vlan 30
  name Admin
-vlan 90
- name Servers
+exit
 vlan 99
  name Management
+exit
+vlan 90
+ name Servers
+exit
 
 interface range fa0/6-10
+ switchport trunk encapsulation dot1q
  switchport mode trunk
  switchport trunk allowed vlan 10,20,30,90,99
+exit
 
 interface range gi0/1-2
+ switchport trunk encapsulation dot1q
  switchport mode trunk
  switchport trunk allowed vlan 10,20,30,90,99
+exit
 
 
 ! =========================
 ! DIST-SW5
 ! =========================
 
+enable
+configure terminal
 hostname DIST-SW5
+lldp run
+enable password class
+
+line console 0
+ password cisco
+ login
+exit
+
+line vty 0 4
+ password cisco
+ login
+exit
+
+service password-encryption
 spanning-tree mode rapid-pvst
 
 vlan 10
  name Sales
+exit
 vlan 20
  name IT
+exit
 vlan 30
  name Admin
-vlan 90
- name Servers
+exit
 vlan 99
  name Management
+exit
+vlan 90
+ name Servers
+exit
 
 interface range fa0/6-10
+ switchport trunk encapsulation dot1q
  switchport mode trunk
  switchport trunk allowed vlan 10,20,30,90,99
+exit
 
 interface range gi0/1-2
+ switchport trunk encapsulation dot1q
  switchport mode trunk
  switchport trunk allowed vlan 10,20,30,90,99
+exit
 
 
 ! =========================
 ! DIST-SW6
 ! =========================
 
+enable
+configure terminal
 hostname DIST-SW6
+lldp run
+enable password class
+
+line console 0
+ password cisco
+ login
+exit
+
+line vty 0 4
+ password cisco
+ login
+exit
+
+service password-encryption
 spanning-tree mode rapid-pvst
 
 vlan 10
  name Sales
+exit
 vlan 20
  name IT
+exit
 vlan 30
  name Admin
-vlan 90
- name Servers
+exit
 vlan 99
  name Management
+exit
+vlan 90
+ name Servers
+exit
 
 interface range fa0/6-10
+ switchport trunk encapsulation dot1q
  switchport mode trunk
  switchport trunk allowed vlan 10,20,30,90,99
+exit
 
 interface range gi0/1-2
+ switchport trunk encapsulation dot1q
  switchport mode trunk
  switchport trunk allowed vlan 10,20,30,90,99
+exit
