@@ -1,1 +1,110 @@
+! =========================================================
+! CORE ROUTER CONFIGURATION
+! Enterprise Hierarchical Network
+! =========================================================
 
+enable
+configure terminal
+hostname Core-R1
+
+lldp run
+enable password class
+
+line console 0
+ password cisco
+ login
+exit
+
+line vty 0 4
+ password cisco
+ login
+exit
+
+service password-encryption
+
+
+! =========================
+! INTERNAL INTERFACES
+! =========================
+
+! CORE-SW1
+interface gigabitethernet0/0
+ ip address 10.255.255.1 255.255.255.252
+ ip nat inside
+ no shutdown
+exit
+
+! CORE-SW2
+interface gigabitethernet0/1
+ ip address 10.255.255.5 255.255.255.252
+ ip nat inside
+ no shutdown
+exit
+
+
+! =========================
+! ROUTING WITH OSPF
+! =========================
+
+router ospf 1
+ router-id 1.1.1.1
+ network 10.255.255.0 0.0.0.3 area 0
+ network 10.255.255.4 0.0.0.3 area 0
+ default-information originate always
+exit
+
+
+! =========================
+! DHCP CONFIG
+! =========================
+
+ip dhcp excluded-address 10.10.0.1 10.10.0.5
+ip dhcp excluded-address 10.20.0.1 10.20.0.5
+ip dhcp excluded-address 10.30.0.1 10.30.0.5
+
+ip dhcp pool Sales
+ network 10.10.0.0 255.255.255.0
+ default-router 10.10.0.1
+ dns-server 8.8.8.8
+exit
+
+ip dhcp pool IT
+ network 10.20.0.0 255.255.255.0
+ default-router 10.20.0.1
+ dns-server 8.8.8.8
+exit
+
+ip dhcp pool Admin
+ network 10.30.0.0 255.255.255.0
+ default-router 10.30.0.1
+ dns-server 8.8.8.8
+exit
+
+
+! =========================
+! EXTERNAL COMMUNICATION
+! =========================
+
+interface gigabitethernet0/2
+ ip address 203.0.113.1 255.255.255.252
+ no shutdown
+ ip nat outside
+exit
+
+
+! =========================
+! PAT / NAT OVERLOAD
+! =========================
+
+ip access-list standard PAT_ACCESS
+ permit 10.0.0.0 0.255.255.255
+exit
+
+ip nat inside source list PAT_ACCESS interface gigabitethernet0/2 overload
+
+
+! =========================
+! DEFAULT ROUTE
+! =========================
+
+ip route 0.0.0.0 0.0.0.0 203.0.113.2
